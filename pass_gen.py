@@ -15,9 +15,9 @@ if number_of_chars >=4 and number_of_chars <=16:
         num = random.randint(0,len(characters)-1)
 
         password += characters[num]
-    print(password)
+    print(f"password is : {password}")
     hashed_password = sha256(password.encode()).hexdigest()
-    print(hashed_password)
+    print(f"hashed password is : {hashed_password}")
 else:
     print("not correct number of digits specified")
 
