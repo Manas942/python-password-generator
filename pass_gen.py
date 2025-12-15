@@ -67,8 +67,19 @@ def check_pass_strength(passkey) :
             print(colors.red +"weak password" + colors.reset)
 
 check_pass_strength(passkey=password)
+option_ended = False
+while option_ended == False:
+    To_save = input("Do You Want To save the password(y/n): ")
 
+    if To_save == "y" or To_save == "Y":
+        f = open("password.txt", "w")
+        f.write(password)
+        f.close()
+        option_ended = True
+    elif To_save == "n" or To_save == "N":
+        print("password not saved")
+        option_ended = True
 
-f = open("password.txt", "w")
-f.write(password)
-f.close()
+    else:
+        print("please choose correct option (y/n) :")
+        option_ended = False
