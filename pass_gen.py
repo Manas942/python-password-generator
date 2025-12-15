@@ -3,10 +3,10 @@ import hashlib
 import string
 
 class colors :
-    red = "\033[31m",
-    orange = "\033[38;5;208m",
-    yellow = "\033[33m",
-    green = "\033[32m",
+    red = "\033[31m"
+    orange = "\033[38;5;208m"
+    yellow = "\033[33m"
+    green = "\033[32m"
     reset = "\033[0m"
 
 
