@@ -1,5 +1,6 @@
 import random 
 import hashlib
+import string
 
 characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*'
 
@@ -21,5 +22,17 @@ if number_of_chars >=4 and number_of_chars <=16:
 else:
     print("not correct number of digits specified")
 
+
+def check_pass_strength(password) :
+    pass_length = len(password)
+
+    if pass_length >= 8:
+        for i in password:
+            if i in string.punctuation:
+                print("Strong Password")
+            else:
+                print("medium password")
+    else:
+        print("weak password")
 
 
