@@ -2,6 +2,16 @@ import random
 import hashlib
 import string
 
+class colors :
+    red = "\033[31m",
+    orange = "\033[38;5;208m",
+    yellow = "\033[33m",
+    green = "\033[32m",
+    reset = "\033[0m"
+
+
+
+
 characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*'
 
 password = ''
@@ -47,13 +57,13 @@ def check_pass_strength(passkey) :
 
     if len(passkey) >= 8:
         if has_special_char == True:
-            print("very strong password")
+            print(colors.green + "very strong password" + colors.reset)
         else:
-            print("good password")
+            print(colors.orange + "good password" + colors.reset)
     else:
         if has_special_char == True:
-            print("meduium password")
+            print(colors.yellow + "meduium password" + colors.reset)
         else:
-            print("weak password")
+            print(colors.red +"weak password" + colors.reset)
 
 check_pass_strength(passkey=password)
