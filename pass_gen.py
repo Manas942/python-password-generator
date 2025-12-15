@@ -23,16 +23,37 @@ else:
     print("not correct number of digits specified")
 
 
-def check_pass_strength(password) :
-    pass_length = len(password)
+def check_pass_strength(passkey) :
+    has_special_char = False
+    pass_length = len(passkey)
 
     if pass_length >= 8:
-        for i in password:
+        for i in passkey:
             if i in string.punctuation:
-                print("Strong Password")
+                has_special_char = True
+                break
+                
             else:
-                print("medium password")
+                has_special_char = False
+        
+
     else:
-        print("weak password")
+        for j in passkey:
+            if j in string.punctuation:
+                has_special_char = True
+                break
+            else:
+                has_special_char = False
 
+    if len(passkey) >= 8:
+        if has_special_char == True:
+            print("very strong password")
+        else:
+            print("good password")
+    else:
+        if has_special_char == True:
+            print("meduium password")
+        else:
+            print("weak password")
 
+check_pass_strength(passkey=password)
