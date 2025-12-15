@@ -67,3 +67,8 @@ def check_pass_strength(passkey) :
             print(colors.red +"weak password" + colors.reset)
 
 check_pass_strength(passkey=password)
+
+
+f = open("password.txt", "w")
+f.write(password)
+f.close()
