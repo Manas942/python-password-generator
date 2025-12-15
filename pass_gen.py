@@ -14,7 +14,7 @@ class colors :
 
 characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*'
 
-password = ''
+password = ' '
 
 sha256 = hashlib.sha256
 
@@ -55,6 +55,7 @@ def check_pass_strength(passkey) :
             else:
                 has_special_char = False
 
+
     if len(passkey) >= 8:
         if has_special_char == True:
             print(colors.green + "very strong password" + colors.reset)
@@ -66,20 +67,21 @@ def check_pass_strength(passkey) :
         else:
             print(colors.red +"weak password" + colors.reset)
 
-check_pass_strength(passkey=password)
-option_ended = False
-while option_ended == False:
-    To_save = input("Do You Want To save the password(y/n): ")
+if len(password) >=4 and len(password) <=16:
+    check_pass_strength(passkey=password)
+    option_ended = False
+    while option_ended == False:
+        To_save = input("Do You Want To save the password(y/n): ")
 
-    if To_save == "y" or To_save == "Y":
-        f = open("password.txt", "w")
-        f.write(password)
-        f.close()
-        option_ended = True
-    elif To_save == "n" or To_save == "N":
-        print("password not saved")
-        option_ended = True
+        if To_save == "y" or To_save == "Y":
+            f = open("password.txt", "w")
+            f.write(password)
+            f.close()
+            option_ended = True
+        elif To_save == "n" or To_save == "N":
+            print("password not saved")
+            option_ended = True
 
-    else:
-        print("please choose correct option (y/n) :")
-        option_ended = False
+        else:
+            print("please choose correct option (y/n) :")
+            option_ended = False
